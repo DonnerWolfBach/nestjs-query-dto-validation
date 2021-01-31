@@ -5,7 +5,7 @@ import { someSchema } from './someSchema.dto';
 export class AppController {
 
 
-  /**This should 
+  /**This should evalaute wether the query-params fit to someSchema and return it if so
    * 
    */
   @Get()
