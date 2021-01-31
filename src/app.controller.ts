@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query, ValidationPipe } from '@nestjs/common';
+import { someSchema } from './someSchema.dto';
 
 @Controller()
 export class AppController {
@@ -8,7 +9,7 @@ export class AppController {
    * 
    */
   @Get()
-  getHello(params): string {
+  getHello(@Query(ValidationPipe) params : someSchema) {
     return params;
   }
 }
