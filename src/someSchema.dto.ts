@@ -6,7 +6,8 @@ import { IsISO8601, IsNumber, IsString} from "class-validator"
 export class someSchema{
 
     @IsNumber()
-    @Transform(value => Number(value))
+    //@Transform(value => {console.log(value);return parseInt(value.value)})
+    @Transform(param => parseInt(param.value))
     num: number
 
     @IsString()
